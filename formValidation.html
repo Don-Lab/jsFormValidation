@@ -1,0 +1,31 @@
+<DOCTYPE! html>
+<head>
+	<title>Js Form Validation</title>
+</head>
+<body>
+	<form name="formName" action="#" method="post" onsubmit="return validForm()"><!--onsubmit="return function()"-->
+		<input name="User" type="text">
+		<input name="Email" type="text">
+		<input type="submit">
+	</form>
+
+	<script>
+	//put the code in a function and call it with the onsubmit attribute in the form tag
+	function validForm() {
+		//var variableName = document.forms["formName"][inputName].value;   the names are made by the attribute "name" in the tag respectivly
+		var person = document.forms["formName"]["User"].value;
+		//if person == null or nothing, alert and return false
+		if (person == null || person == "") {
+			alert("Need name");
+			return false;
+		}
+
+		var add = document.forms["formName"]["Email"].value;
+		if (add == null || add == "") {
+			alert("Need email");
+			return false;
+		}
+	}
+	</script>
+</body>
+</html>
